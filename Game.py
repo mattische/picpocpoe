@@ -1,9 +1,8 @@
 from Player import Player
 from Board import Board
+import colorama, sys, os
 from random import randint
-import colorama
 
-import sys, os
 
 class Game():
 
@@ -119,6 +118,7 @@ class Game():
             #Otherwise, marks is inserted.
             while not self.turn(self.whosTurn, cc):
                 print(colorama.Fore.RED + "Wrong coordinates. Try again: ")
+
                 import time
                 time.sleep(2)
                 break
@@ -152,12 +152,12 @@ def setup():
     """
     def run():
          try:
-            nbr = int(input("Number of rounds: "))
-            g = Game(nbr)#create Game object
-            g.mainLoop()#go!
+             nbr = int(input("Number of rounds: "))
+             g = Game(nbr)#create Game object
+             g.mainLoop()#go!
          except Exception as err:
-            print(colorama.Fore.RED + "Wrong number!" + str(err))
-            run()
+             print(colorama.Fore.RED + "Wrong number!" + str(err))
+             run()
 
     #first, clear screen
     os.system('cls' if os.name == 'nt' else 'clear')

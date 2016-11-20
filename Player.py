@@ -1,6 +1,5 @@
 class Player():
 
-
     def __init__(self, mark="X"):
         self.mark = mark # X or O
         self.matchWins = 0 #nbr of games won
